@@ -1,0 +1,65 @@
+﻿@model IEnumerable<BTTrenlop17_10.Models.TVCSanPham>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TVCMasanPham)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TVCTenSanPham)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TVCHinhAnh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TVCSoLuong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TVCDonGia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TVCLoaiSanPham)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TVCMasanPham)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TVCTenSanPham)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TVCHinhAnh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TVCSoLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TVCDonGia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TVCLoaiSanPham.PVCId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TVCId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TVCId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TVCId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

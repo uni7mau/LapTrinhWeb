@@ -1,0 +1,59 @@
+﻿@model BTTrenlop17_10.Models.TVCSanPham
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TVCSanPham</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TVCId" />
+            <div class="form-group">
+                <label asp-for="TVCMasanPham" class="control-label"></label>
+                <input asp-for="TVCMasanPham" class="form-control" />
+                <span asp-validation-for="TVCMasanPham" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TVCTenSanPham" class="control-label"></label>
+                <input asp-for="TVCTenSanPham" class="form-control" />
+                <span asp-validation-for="TVCTenSanPham" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TVCHinhAnh" class="control-label"></label>
+                <input asp-for="TVCHinhAnh" class="form-control" />
+                <span asp-validation-for="TVCHinhAnh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TVCSoLuong" class="control-label"></label>
+                <input asp-for="TVCSoLuong" class="form-control" />
+                <span asp-validation-for="TVCSoLuong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TVCDonGia" class="control-label"></label>
+                <input asp-for="TVCDonGia" class="form-control" />
+                <span asp-validation-for="TVCDonGia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TVCLoaiSanPhamId" class="control-label"></label>
+                <select asp-for="TVCLoaiSanPhamId" class="form-control" asp-items="ViewBag.TVCLoaiSanPhamId"></select>
+                <span asp-validation-for="TVCLoaiSanPhamId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
