@@ -1,0 +1,48 @@
+﻿@model NguyenDucThach_231230898_de02.Models.NguyenDucThachCatalog
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>NguyenDucThachCatalog</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.hvtCateName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.hvtCateName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.hvtCatePrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.hvtCatePrice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.hvtCateQty)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.hvtCateQty)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.hvtPicture)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.hvtPicture)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.hvtCateActive)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.hvtCateActive)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-primary"   asp-action="ndtEdit" asp-route-id="@Model?.hvtId">Edit</a> |
+    <a class ="btn btn-danger" asp-action="ndtIndex">Back to List</a>
+</div>

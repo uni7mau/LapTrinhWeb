@@ -1,0 +1,53 @@
+﻿@model NguyenDucThach_231230898_de02.Models.NguyenDucThachCatalog
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>NguyenDucThachCatalog</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ndtCreate">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="hvtCateName" class="control-label"></label>
+                <input asp-for="hvtCateName" class="form-control" />
+                <span asp-validation-for="hvtCateName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hvtCatePrice" class="control-label"></label>
+                <input asp-for="hvtCatePrice" class="form-control" />
+                <span asp-validation-for="hvtCatePrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hvtCateQty" class="control-label"></label>
+                <input asp-for="hvtCateQty" class="form-control" />
+                <span asp-validation-for="hvtCateQty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hvtPicture" class="control-label"></label>
+                <input asp-for="hvtPicture" class="form-control" />
+                <span asp-validation-for="hvtPicture" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="hvtCateActive" /> @Html.DisplayNameFor(model => model.hvtCateActive)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ndtIndex">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

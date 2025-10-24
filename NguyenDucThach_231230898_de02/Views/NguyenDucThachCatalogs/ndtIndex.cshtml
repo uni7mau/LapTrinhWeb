@@ -1,0 +1,59 @@
+﻿@model IEnumerable<NguyenDucThach_231230898_de02.Models.NguyenDucThachCatalog>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="ndtCreate">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.hvtCateName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hvtCatePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hvtCateQty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hvtPicture)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hvtCateActive)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.hvtCateName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hvtCatePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hvtCateQty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hvtPicture)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hvtCateActive)
+            </td>
+            <td>
+                    <a class="btn btn-primary" asp-action="ndtEdit" asp-route-id="@item.hvtId">Edit</a> |
+                    <a class="btn btn-success" asp-action="ndtDetails" asp-route-id="@item.hvtId">Details</a> |
+                    <a class="btn btn-danger" asp-action="ndtDelete" asp-route-id="@item.hvtId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
